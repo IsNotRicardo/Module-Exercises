@@ -10,5 +10,4 @@ while value != ' ':
     value = input("Insert a number: ")
 
 numbers.sort(reverse=True)
-x = slice(5)
-print("The five greatest numbers are:", numbers[x])
+print("The five greatest numbers are:", numbers[slice(5)])
