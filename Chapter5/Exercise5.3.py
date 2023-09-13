@@ -5,7 +5,7 @@ for i in range(2, number):
         print("The number is not prime.")
         exit()
 
-if number != 0 and number != 1:
-    print("The number is prime.")
-else:
+if number <= 0 or number == 1:
     print("The number is not prime.")
+else:
+    print("The number is prime.")
