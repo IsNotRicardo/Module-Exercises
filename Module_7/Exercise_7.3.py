@@ -33,7 +33,7 @@ def main():
         case 3:
             quit()
         case _:
-            print("Invalid option")
+            print("Invalid option!")
 
     main()
 

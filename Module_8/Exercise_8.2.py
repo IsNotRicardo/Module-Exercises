@@ -9,26 +9,27 @@ connection = mysql.connector.connect(
 )
 
 
-def fetch_airport():
-    code = str(input("Insert the ICAO code of the airport: ")).upper()
+def get_airports():
+    code = str(input("Insert the area code of a country: ")).upper()
     cursor = connection.cursor(buffered=True)
-    cursor.execute("SELECT name, municipality FROM airport where ident='" + code + "'")
+    cursor.execute("SELECT name, type FROM airport where iso_country='" + code + "' order by type desc")
     result = cursor.fetchall()
 
     if cursor.rowcount != 0:
+        print("List of all airports in the country you selected: ")
         for row in result:
-            print(code + ':', row[0] + ", located in", row[1])
+            print(row[0] + ", type:", row[1])
     else:
-        print("Airport code not in our system!")
+        print("Invalid area code!")
 
 
 def main():
-    print("\n1. Fetch an airport;\n"
+    print("\n1. Get airports in a country;\n"
           "2. Quit the program.\n")
 
     match int(input("Select an option: ")):
         case 1:
-            fetch_airport()
+            get_airports()
         case 2:
             quit()
         case _:
