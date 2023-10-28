@@ -22,7 +22,7 @@ class Car:
 def main():
     cars = list(range(10))
     for i in range(len(cars)):
-        cars[i] = Car("ABC-" + str(i + 1), random.randint(100, 200))
+        cars[i] = Car(f"ABC-{i + 1}", random.randint(100, 200))
 
     while True:
         for i in range(len(cars)):
