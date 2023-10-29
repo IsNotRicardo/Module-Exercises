@@ -20,10 +20,25 @@ class Elevator:
         print(f"↓ Is now in floor {self.current}")
 
 
+class Building:
+    def __init__(self, bf, tf, el):
+        self.bottom = bf
+        self.top = tf
+        self.elevators = list(range(el))
+
+        for i in range(el):
+            self.elevators[i] = Elevator(bf, tf)
+
+    def run_elevator(self, el_num, floor):
+        print(f"\nElevator {el_num + 1}:")
+        self.elevators[el_num].go_to_floor(floor)
+
+
 def main():
-    new_elevator = Elevator(0, 10)
-    new_elevator.go_to_floor(6)
-    new_elevator.go_to_floor(0)
+    new_building = Building(0, 10, 5)
+    new_building.run_elevator(4, 8)
+    new_building.run_elevator(2, 4)
+    new_building.run_elevator(4, 3)
 
 
 main()
