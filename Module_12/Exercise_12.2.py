@@ -1,6 +1,6 @@
 import requests
 
-api_key = "cddaa9d249ebec7a6a4e2871202118e0"
+api_key = ""  # Insert API key here
 
 
 def get_weather():
