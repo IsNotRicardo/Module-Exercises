@@ -7,7 +7,6 @@ def get_weather():
     location = str(input("\nInsert a municipality: "))
     response = requests.get(f"https://api.openweathermap.org/data/2.5/weather?q={location}&appid={api_key}&units=metric").json()
 
-    print(response)
     weather, temp = response['weather'][0], response['main']
     print(f"\nLocation: {response['name']}, {response['sys']['country']}\n"
           f"Weather: {weather['main']}, {weather['description']}\n"
