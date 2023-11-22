@@ -10,7 +10,7 @@ class Book(Publication):
         self.pages = pages
 
     def print_information(self):
-        print(f"{self.author}, wrote by {self.author}, has {self.pages} pages.")
+        print(f"{self.name}, wrote by {self.author}, has {self.pages} pages.")
 
 
 class Magazine(Publication):
