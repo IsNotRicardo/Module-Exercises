@@ -14,7 +14,7 @@ def is_prime(n):
         return True
 
 
-@app.route(f'/prime_number/<int:num>', methods=['GET'])
+@app.route(f'/prime_number/<int:num>')
 def check_num(num):
     return jsonify({"Number": num, "isPrime": is_prime(num)})
 
